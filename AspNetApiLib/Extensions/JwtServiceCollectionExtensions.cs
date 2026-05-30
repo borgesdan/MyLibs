@@ -10,7 +10,7 @@ namespace MyAspNetApiLib.Extensions
         /// <summary>
         /// Adiciona uma configuração para uso de Jwt bearer token. Os dados são obtidos do appsettings.json através do IConfiguration.
         /// </summary>
-        public static IServiceCollection AddJwtConfiguration(this IServiceCollection services, JwtServiceConfiguration configuration)
+        public static IServiceCollection UseJwtConfiguration(this IServiceCollection services, JwtServiceConfiguration configuration)
         {
             var key = !string.IsNullOrWhiteSpace(configuration.Key) ? configuration.Key : throw new InvalidOperationException("O parâmetro Key está nulo ou vazio.");
             var issue = !string.IsNullOrWhiteSpace(configuration.Issue) ? configuration.Issue : throw new InvalidOperationException("O parâmetro Issue está nulo ou vazio.");
